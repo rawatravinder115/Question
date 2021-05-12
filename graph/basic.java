@@ -15,6 +15,20 @@ public class basic{
 
     public static void main(String[] args) {
         Construct();
+        display(graph);
+        // System.out.println(findEdge(3,4));
+        // removeEdge(3,4);
+        // display(graph);
+        // removeVertex(3);
+        // display(graph);
+        boolean[] vis = new boolean[n];
+        // System.out.println(haspath(0,6,vis));
+        // System.out.println(hasAllpath(0,6,vis,0,""));
+        // preorder(0,vis,0,"");
+        AllSolution pair = new AllSolution();
+        CeilandFloor(0, 6, vis, 0, "", pair, 30);
+        System.out.println(pair.heavyw + "->" + pair.lightw + "->" + pair.ceil + "->" + pair.floor);
+
     }
 
     public static void Construct(){
@@ -130,7 +144,7 @@ public class basic{
             if(!vis[src])
                 CeilandFloor(e.v,dest,vis,w+e.w,ans+e.v+"",pair,data);
         }
-        
+
         vis[src]=false;
     }
 
