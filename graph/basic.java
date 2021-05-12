@@ -48,4 +48,90 @@ public class basic{
         gp.get(u).add(new Edge(v,w));
         gp.get(v).add(new Edge(u,w));
     }
+
+    public static int FindEdge(int v1 , int v2){
+        int i=0;
+        for ( i = 0; i < graph.size() ; i++) {
+            Edge e = graph.get(v1).get(i);
+            if(e.v == v2)
+                break;
+        }
+        return i;
+    }
+
+    public static void RemoveEdge(int u , int v ){
+        int idx1 = FindEdge(u,v);
+        int idx2 = FindEdge(v,u);
+
+        graph.get(u).remove(idx1);
+        graph.get(v).remove(idx2);
+    }
+
+    public static void RemoveVertex(int vtx){
+        while(graph.get(vtx).size() != 0 ){
+            int i=graph.get(vtx).size() -1;
+            Edge e = graph.get(vtx).get(i);
+            RemoveEdge(vtx,e.v);
+        }
+    }
+
+    public static boolean hasPath(int src , int dest , boolean[] vis){
+        if(src == dest){
+            return true;
+        }
+        vis[src] = true;
+        boolean res = false;
+        for (Edge e : graph.get(src)) {
+            if(!vis[e.v])
+                res = res || hasPath(e.v ,dest,vis);
+        }
+        return res;
+    }
+
+    public static int hasAllPath(int src ,int dest , boolean[] vis , int w ,String ans){
+        if(src == dest ){
+            System.out.println(ans+dest+"@"+w);
+            return 1;
+        }
+        vis[src] = true;
+        int count= 0;
+        for(Edge e : graph.get(src)){
+            if(!vis[e.v]){
+                count+=hasAllPath(e.v,dest,vis,w+e.w ,ans+src+"");
+            }
+        }
+        vis[src]= false;
+        return count;
+    }
+
+    public static class AllSolution{
+        int lightw=(int)1e7;
+        int heavyw= 0;
+        int ceil= 0;
+        int floor=(int)1e7;
+    }
+
+    public static void CeilandFloor(int src , int dest,boolean[] vis ,int w ,String ans ,AllSolution pair ,int data){
+        if(src == dest){
+            pair.heavyw = Math.max(pair.heavyw,w);
+            pair.lightw = Math.min(pair.lightw,w);
+            // ceil
+            if (data < w)
+                pair.ceil= Math.min(pair.ceil,w);
+
+            // floor
+            if (data > w )
+                pair.floor = Math.max(pair.floor,w);
+
+            return;
+        }
+        vis[src] = true;
+        for (Edge e: graph.get(src)) {
+            if(!vis[src])
+                CeilandFloor(e.v,dest,vis,w+e.w,ans+e.v+"",pair,data);
+        }
+        
+        vis[src]=false;
+    }
+
 }
