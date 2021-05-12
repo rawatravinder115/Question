@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 class basic{
 
     public static class Edge{
@@ -11,5 +12,42 @@ class basic{
 
     public static int n=7;
     public static ArrayList<ArrayList<Edge>> graph;
-    
+
+    public static void main(String[] args) {
+        Construct();
+    }
+
+    public static void Construct(){
+        graph = ArrayList<>();
+        for (int i = 0; i <graph.size() ; i++) {
+            graph.add(new ArrayList<Edge>());
+        }
+        addEdge(graph, 0, 1, 10);
+        addEdge(graph, 0, 3, 10);
+        addEdge(graph, 1, 2, 10);
+        addEdge(graph, 2, 3, 40);
+        addEdge(graph, 3, 4, 2);
+        addEdge(graph, 4, 5, 2);
+        addEdge(graph, 4, 6, 3);
+        addEdge(graph, 5, 6, 8);
+        display(graph);
+    }
+
+    public static void display(ArrayList<ArrayList<Edge>> gp){
+        for (int i = 0; i < gp.size() ; i++) {
+            System.out.print( i + "->");
+            for (Edge e : graph.get(i) {
+                System.out.print("("+ e.v + ","+ e.w+")");
+            }
+        }
+    }
+
+    public static void addEdge(ArrayList<ArrayList<Edge>> gp ,int u, int v ,int w ,i){
+        gp.get(u).add(new Edge(v,u));
+        gp.get(v).add(new Edge(u,v));
+    }
+
+
+
+
 }
