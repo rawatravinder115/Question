@@ -1,4 +1,7 @@
 class lt997{
+    
+    // leetcode 997 -> Find the Town Judge
+
     public int findJudge(int n, int[][] trust) {
         if(n==1){
             return 1;
