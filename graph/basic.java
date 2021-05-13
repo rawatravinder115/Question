@@ -148,4 +148,48 @@ public class basic{
         vis[src]=false;
     }
 
+    public static void Hamiltonainpath(int src , int os , boolean[] vis, int count , String ans)
+    {
+        if(count == graph.size() - 1 ){
+            int idx = FindEdge(src,os);
+            if(idx != -1)
+                System.out.println("cycle :"+ ans+src);
+            else
+                System.out.println("path :" + ans+src);
+
+            return;
+        }
+
+        vis[src] = true;
+        for (Edge e : graph.get(src)){
+            if (!vis[e.v])
+                Hamiltonainpath(e.v,os,vis,count+1,ans+src+"");
+        }
+        vis[src] = false;
+    }
+
+    // Get Connected Component
+    public static int GCC(){
+        boolean[] vis = new boolean[n];
+        int count=0;
+        int maxSize=0;
+        for (int i = 0;i < n;i++) {
+            if (!vis[i]){
+                count++;
+                maxSize = Math.max(maxSize,DFS_GCC(i,vis));
+            }
+        }
+        System.out.println(maxSize);
+        return count;
+    }
+
+    public static int DFS_GCC(int src, boolean[] vis){
+        int count=0;
+        vis[src]=true;
+        for (Edge e: graph.get(src)) {
+            if (!vis[e.v])
+                count+=DFS_GCC(e.v,vis);
+        }
+        return count+1;
+    }
 }
