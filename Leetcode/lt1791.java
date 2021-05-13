@@ -1,4 +1,6 @@
 class lt1791{
+
+    // leetcode 1791 -> Find Center of Star Graph 
    
         public int findCenter01(int[][] edges) {
         int x = edges[0][0], y = edges[0][1];
