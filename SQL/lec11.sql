@@ -1,0 +1,14 @@
+show databases;
+create database user_details_db;
+use user_details_db;
+use books;
+use jwt;
+create database books;
+show tables;
+select * from user;
+select * from book;
+select * from hibernate_sequence;
+select * from book_category;
+select * from my_user_details;
+select * from book where book_category_id =1;
+insert into book (id,author_name,cost,name,book_category_id) VALUES (6,"C",400,"Ruby",1); 
