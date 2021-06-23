@@ -16,5 +16,20 @@ class friends_pairing{
 
         return dp[n] = (single + pair_up);
     }
-    
+
+    public static int friends_pairing_problemDPTabu(int n, int[] dp) {
+
+        for (int i = 0; i <= n; i++) {
+            if (i <= 1) {
+                dp[i] = 1;
+                continue;
+            }
+
+            int single = dp[i - 1];
+            int pair_up = dp[i - 2] * (i - 1);
+
+            dp[i] = (single + pair_up);
+        }
+        return dp[n];
+    }
 }
