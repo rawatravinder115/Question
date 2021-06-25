@@ -52,4 +52,37 @@ class goldmine{
 
       return dp[sr][sc] = maxgold + gold[sr][sc];
   }
+
+  public static int goldmine_DPTabu(int sr, int sc, int[][] gold, int[][] dp) {
+
+   for (sc = gold[0].length - 1; sc >= 0; sc--) {
+       for (sr = gold.length - 1; sr >= 0; sr--) {
+
+           if (sc == gold[0].length - 1) {
+               dp[sr][sc] = gold[sr][sc];
+               continue;
+           }
+
+           int[][] dir = { { -1, 1 }, { 0, 1 }, { 1, 1 } };
+           int maxgold = 0;
+           for (int d = 0; d < dir.length; d++) {
+
+               int x = sr + dir[d][0];
+               int y = sc + dir[d][1];
+
+               if (x >= 0 && y >= 0 && x < gold.length && y < gold[0].length) {
+                   maxgold = Math.max(maxgold, dp[x][y]);
+               }
+           }
+
+           dp[sr][sc] = maxgold + gold[sr][sc];
+       }
+   }
+
+   int max = 0;
+   for (int i = 0; i < dp.length; i++) {
+       max = Math.max(max, dp[i][0]);
+   }
+   return max;
+}
 }
