@@ -146,4 +146,6 @@ class lecture02{
                 dp[k][n] = NewGroup + ExistingGroup;
             }
         }
+        return dp[K][N];
+    }
 }
