@@ -114,4 +114,15 @@ class lecture02{
 
         return dp[k][n] = NewGroup + ExistingGroup;
     }
+
+    public static void count(int n, int k) {
+        // int n=5,k=3;
+        if (n < k)
+            return;
+        int[][] dp = new int[k + 1][n + 1];
+        System.out.println(count_of_ways_DPMemo(n, k, dp));
+        Display2d(dp);
+        System.out.println(count_of_ways_DPTabu(n, k, dp));
+        Display2d(dp);
+    }
 }
