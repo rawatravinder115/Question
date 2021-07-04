@@ -125,4 +125,25 @@ class lecture02{
         System.out.println(count_of_ways_DPTabu(n, k, dp));
         Display2d(dp);
     }
+
+    public static int count_of_ways_DPTabu(int n, int k, int[][] dp) {
+        int K = k, N = n;
+        for (k = 1; k <= K; k++) {
+            for (n = 0; n <= N; n++) {
+
+                if (n < k) {
+                    continue;
+                }
+
+                if (n == k || k == 1) {
+                    dp[k][n] = 1;
+                    continue;
+                }
+
+                int NewGroup = dp[k - 1][n - 1];
+                int ExistingGroup = dp[k][n - 1] * k;
+
+                dp[k][n] = NewGroup + ExistingGroup;
+            }
+        }
 }
