@@ -45,4 +45,29 @@ class lecture02{
         }
         return dp;
     }
+
+    // geeksforgeeks: https://www.geeksforgeeks.org/gold-mine-problem/
+    public static int goldmine_DPMemo(int sr, int sc, int[][] gold, int[][] dp) {
+
+        if (sc == gold[0].length - 1)
+            return dp[sr][sc] = gold[sr][sc];
+
+        if (dp[sr][sc] != 0)
+            return dp[sr][sc];
+
+        int[][] dir = { { -1, 1 }, { 0, 1 }, { 1, 1 } };
+        int maxgold = 0;
+        for (int d = 0; d < dir.length; d++) {
+
+            int x = sr + dir[d][0];
+            int y = sc + dir[d][1];
+
+            if (x >= 0 && y >= 0 && x < gold.length && y < gold[0].length) {
+                maxgold = Math.max(maxgold, goldmine_DPMemo(x, y, gold, dp));
+            }
+        }
+
+        return dp[sr][sc] = maxgold + gold[sr][sc];
+    }
+
 }
