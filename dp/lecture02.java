@@ -192,4 +192,22 @@ class lecture02{
         return str.substring(si, ei + 1);
     }
 
+    public static int longestPalindromeSubseq_rec(String str, int si, int ei, int[][] dp, boolean[][] ispalindrome) {
+        if (ispalindrome[si][ei])
+            return dp[si][ei] = ei - si + 1;
+
+        if (dp[si][ei] != 0)
+            return dp[si][ei];
+
+        int len = 0;
+        if (str.charAt(si) == str.charAt(ei))
+            len = longestPalindromeSubseq_rec(str, si + 1, ei - 1, dp, ispalindrome) + 2;
+        else
+            len = Math.max(longestPalindromeSubseq_rec(str, si + 1, ei, dp, ispalindrome),
+                    longestPalindromeSubseq_rec(str, si, ei - 1, dp, ispalindrome));
+
+        return dp[si][ei] = len;
+    }
+
+
 }
