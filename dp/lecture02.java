@@ -219,5 +219,17 @@ class lecture02{
                     continue;
                 }
 
+                int len = 0;
+                if (str.charAt(si) == str.charAt(ei))
+                    len = dp[si + 1][ei - 1] + 2;
+                else
+                    len = Math.max(dp[si + 1][ei], dp[si][ei - 1]);
+
+                dp[si][ei] = len;
+            }
+        }
+        return dp[0][str.length() - 1];
+    }
+
 
 }
