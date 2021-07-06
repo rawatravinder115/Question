@@ -231,5 +231,16 @@ class lecture02{
         return dp[0][str.length() - 1];
     }
 
+    // leetcode 547 :
+
+    public int countSubstrings(String str) {
+        int n = str.length();
+        int count = 0;
+        int[][] dp = new int[n][n];
+        for (int gap = 0; gap < n; gap++) {
+            for (int i = 0, j = gap; j < n; i++, j++) {
+                if (gap == 0)
+                    dp[i][j] = 1;
+
 
 }
