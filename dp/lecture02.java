@@ -241,6 +241,16 @@ class lecture02{
             for (int i = 0, j = gap; j < n; i++, j++) {
                 if (gap == 0)
                     dp[i][j] = 1;
+                    else if (gap == 1 && str.charAt(i) == str.charAt(j))
+                    dp[i][j] = 2;
+                else if (str.charAt(i) == str.charAt(j) && dp[i + 1][j - 1] != 0)
+                    dp[i][j] = gap + 1;
+
+                count += dp[i][j] != 0 ? 1 : 0;
+            }
+        }
+        return count;
+    }
 
 
 }
