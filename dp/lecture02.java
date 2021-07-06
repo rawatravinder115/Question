@@ -209,5 +209,15 @@ class lecture02{
         return dp[si][ei] = len;
     }
 
+    public static int longestPalindromeSubseq_DP(String str, int si, int ei, int[][] dp, boolean[][] ispalindrome) {
+
+        for (int gap = 0; gap < str.length(); gap++) {
+            for (si = 0, ei = gap; ei < str.length(); si++, ei++) {
+
+                if (ispalindrome[si][ei]) {
+                    dp[si][ei] = ei - si + 1;
+                    continue;
+                }
+
 
 }
