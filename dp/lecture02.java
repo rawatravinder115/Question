@@ -324,6 +324,12 @@ class lecture02{
         if (dp[i][j] != 0) {
             return dp[i][j];
         }
+        if (s.charAt(i) == t.charAt(j))
+            return dp[i][j] = numDistinct_SubSequence_DP02(s, t, i + 1, j + 1, dp)
+                    + numDistinct_SubSequence_DP02(s, t, i + 1, j, dp);
+
+        return dp[i][j] = numDistinct_SubSequence_DP02(s, t, i + 1, j, dp);
+    }
 
 
 }
