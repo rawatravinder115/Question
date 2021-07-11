@@ -299,6 +299,16 @@ class lecture02{
         int n = s.length();
         int m = t.length();
         int[][] dp = new int[n + 1][m + 1];
+        int ans = numDistinct_SubSequence(s, t, n, m, dp);
+        // int ans = numDistinct_SubSequence_DP(s, t, n, m, dp);
+
+        // if start from the begining
+        // int ans = numDistinct_SubSequence_DP02(s, t,0 , 0, dp);
+        Display2d(dp);
+
+        return ans;
+
+    }
 
 
 }
