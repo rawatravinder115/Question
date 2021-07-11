@@ -310,5 +310,20 @@ class lecture02{
 
     }
 
+    // if start from the starting index
+    public static int numDistinct_SubSequence_DP02(String s, String t, int i, int j, int[][] dp) {
+
+        if (t.length() - j == 0) // bcoz we can find the subseq for the "" blank also.
+            return dp[i][j] = 1;
+
+        if (t.length() - j > s.length() - i) // bcoz we can find the subseq for the string whose is greater than the
+                                             // another
+                                             // string
+            return dp[i][j] = 0;
+
+        if (dp[i][j] != 0) {
+            return dp[i][j];
+        }
+
 
 }
