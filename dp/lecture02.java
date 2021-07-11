@@ -295,5 +295,10 @@ class lecture02{
         return dp[N][M];
     }
 
+    public static int numDistinct(String s, String t) {
+        int n = s.length();
+        int m = t.length();
+        int[][] dp = new int[n + 1][m + 1];
+
 
 }
