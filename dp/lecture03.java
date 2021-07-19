@@ -35,4 +35,7 @@ class lecture03{
 
                 if (dp[i][j] != 0)
                     return dp[i][j];
+                    int middleString = dp[i + 1][j - 1];
+                int excludingLast = dp[i][j - 1];
+                int excludingFirst = dp[i + 1][j];
 }
