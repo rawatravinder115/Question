@@ -21,4 +21,18 @@ class lecture03{
         return dp[i][j] = (s.charAt(i) == s.charAt(j) ? ans + 1 : ans - middleString);
 
     }
+
+    public int countps_DP(String s, int i, int j, int[][] dp) {
+
+        int n = s.length();
+        for (int gap = 0; gap < n; gap++) {
+            for (i = 0, j = gap; j < n; j++, i++) {
+
+                if (i == j) {
+                    dp[i][j] = 1;
+                    continue;
+                }
+
+                if (dp[i][j] != 0)
+                    return dp[i][j];
 }
