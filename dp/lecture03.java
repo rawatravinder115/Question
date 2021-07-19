@@ -38,4 +38,10 @@ class lecture03{
                     int middleString = dp[i + 1][j - 1];
                 int excludingLast = dp[i][j - 1];
                 int excludingFirst = dp[i + 1][j];
+                int ans = excludingFirst + excludingLast;
+                dp[i][j] = (s.charAt(i) == s.charAt(j) ? ans + 1 : ans - middleString);
+            }
+        }
+        return dp[0][n - 1];
+    }
 }
