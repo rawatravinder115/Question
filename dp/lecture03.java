@@ -48,5 +48,10 @@ class lecture03{
     public static void solve() {
         String s = "GeeksforGeeks";
         String t = "GeeksQuiz";
+        int[][] dp = new int[s.length()][t.length()];
+        System.out.println(longestCommonSubstring(s, t, 0, 0, dp));
+        // System.out.println(longestCommonSubstring_DP(s, t, 0, 0, dp));
+        Display2d(dp);
+    }
 
 }
