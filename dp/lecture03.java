@@ -64,3 +64,8 @@ class lecture03{
 int[][] dp = new int[a.length + 1][b.length + 1];
         System.out.println(maxUncrossedLines_DP(a, b, 0, 0, dp));
     }
+
+    public static void coin() {
+        int[] arr = { 2, 3, 5, 7 };
+        int tar = 10;
+        int[] dp = new int[tar + 1];
