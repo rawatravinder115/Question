@@ -54,4 +54,12 @@ class lecture03{
         Display2d(dp);
     }
 
+    public static void leetcode() {
+        // int[] a = { 1, 3, 7, 1, 7, 5 };
+        // int[] b = { 1, 9, 2, 5, 1 };
+        // System.out.println(maxUncrossedLines(a, b));
+
+        int[] a = { 2, 1, -2, 5 };
+        int[] b = { 3, 0, -6 };
+
 }
