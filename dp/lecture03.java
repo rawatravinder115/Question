@@ -61,5 +61,6 @@ class lecture03{
 
         int[] a = { 2, 1, -2, 5 };
         int[] b = { 3, 0, -6 };
-
-}
+int[][] dp = new int[a.length + 1][b.length + 1];
+        System.out.println(maxUncrossedLines_DP(a, b, 0, 0, dp));
+    }
