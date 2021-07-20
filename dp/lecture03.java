@@ -69,3 +69,9 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         int[] arr = { 2, 3, 5, 7 };
         int tar = 10;
         int[] dp = new int[tar + 1];
+        // int ans=coinChangePermutation(arr, tar, dp);
+        // int ans = coinChangePermutation_DP(arr, tar, dp);
+        int ans = coinChangeCombination_DP(arr, tar, dp);
+        Display1d(dp);
+        System.out.println(ans);
+    }
