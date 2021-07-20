@@ -44,4 +44,9 @@ class lecture03{
         }
         return dp[0][n - 1];
     }
+
+    public static void solve() {
+        String s = "GeeksforGeeks";
+        String t = "GeeksQuiz";
+
 }
