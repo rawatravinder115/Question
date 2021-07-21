@@ -75,3 +75,12 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         Display1d(dp);
         System.out.println(ans);
     }
+    
+    public static void Display1d(int[] dp) {
+        for (int i : dp)
+            System.out.print(i + " ");
+
+        System.out.println();
+    }
+}
+
