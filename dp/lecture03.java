@@ -91,5 +91,11 @@ int[][] dp = new int[a.length + 1][b.length + 1];
             System.out.println();
         }
     }
+
+    public static int longestCommonSubsequence(String s, String t) {
+        int n = s.length(), m = t.length();
+        int[][] dp = new int[n + 1][m + 1];
+        return longestCommonSubsequence01(s, t, n, m, dp);
+    }
 }
 
