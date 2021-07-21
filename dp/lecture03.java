@@ -105,5 +105,16 @@ int[][] dp = new int[a.length + 1][b.length + 1];
 
         if (dp[i][j] != 0)
             return dp[i][j];
+
+            int ans = 0;
+            if (s.charAt(i) == t.charAt(j)) {
+                ans = longestCommonSubsequence01(s, t, i + 1, j + 1, dp);
+            } else {
+                ans = Math.max(longestCommonSubsequence01(s, t, i + 1, j, dp),
+                        longestCommonSubsequence01(s, t, i, j + 1, dp));
+            }
+    
+            return dp[i][j] = ans;
+        }
 }
 
