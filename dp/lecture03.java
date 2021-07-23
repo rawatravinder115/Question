@@ -201,5 +201,12 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         }
         return dp[i][j] = count;
     }
+
+    public static int maxUncrossedLines_DP(int[] a, int[] b, int i, int j, int[][] dp) {
+
+        for (i = a.length; i >= 0; i--) {
+            for (j = b.length; j >= 0; j--) {
+                if (i == a.length || j == b.length) {
+                    dp[i][j] = 0;
 }
 
