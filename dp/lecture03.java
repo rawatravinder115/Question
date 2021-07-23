@@ -208,5 +208,11 @@ int[][] dp = new int[a.length + 1][b.length + 1];
             for (j = b.length; j >= 0; j--) {
                 if (i == a.length || j == b.length) {
                     dp[i][j] = 0;
+                    continue;
+                }
+                int count = 0;
+                if (a[i] == b[j]) {
+                    count = dp[i + 1][j + 1] + 1;
+                } else {
 }
 
