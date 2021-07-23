@@ -221,5 +221,10 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         }
         return dp[0][0];
     }
+
+    leetcode 1458 : Max Dot Product of Two Subsequences
+
+    public int maxDotProduct(int[] nums1, int[] nums2,int i, int j ,int [][] dp )
+    {
 }
 
