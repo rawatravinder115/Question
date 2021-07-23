@@ -230,5 +230,11 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         return (int)-1e8;
     
         int val= nums1[i]*nums2[j];
+        int a = maxDotProduct(nums1, nums2, i+1, j+1, dp) + val;
+    int b= maxDotProduct(nums1, nums2, i+1, j, dp);
+    int c = maxDotProduct(nums1, nums2, i, j+1, dp);
+
+    return Math.max(Math.max(a, b), Math.max(c, val));
+    }
 }
 
