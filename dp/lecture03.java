@@ -156,5 +156,13 @@ int[][] dp = new int[a.length + 1][b.length + 1];
 
         return dp[i][j] = count;
     }
+
+    public static int longestCommonSubstring_DP(String s, String t, int i, int j, int[][] dp) {
+        for (i = s.length(); i >= 0; i--) {
+            for (j = t.length(); j >= 0; j--) {
+                if (i == s.length() || j == t.length()) {
+                    dp[i][j] = 0;
+                    continue;
+                }
 }
 
