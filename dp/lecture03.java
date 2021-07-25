@@ -151,5 +151,10 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         if (s.charAt(i) == t.charAt(j)) {
             count = longestCommonSubstring(s, t, i + 1, j + 1, dp) + 1;
         }
+        count = Math.max(count,
+                Math.max(longestCommonSubstring(s, t, i + 1, j, dp), longestCommonSubstring(s, t, i, j + 1, dp)));
+
+        return dp[i][j] = count;
+    }
 }
 
