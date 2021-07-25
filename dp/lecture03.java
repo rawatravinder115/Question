@@ -169,5 +169,12 @@ int[][] dp = new int[a.length + 1][b.length + 1];
                 if (s.charAt(i) == t.charAt(j)) {
                     count = dp[i + 1][j + 1] + 1;
                 }
+                count = Math.max(count, Math.max(dp[i + 1][j], dp[i][j + 1]));
+
+                dp[i][j] = count;
+            }
+        }
+        return dp[0][0];
+    }
 }
 
