@@ -116,5 +116,35 @@ int[][] dp = new int[a.length + 1][b.length + 1];
     
             return dp[i][j] = ans;
         }
+
+        public static int longestCommonSubsequence_DP(String s, String t, int i, int j, int[][] dp) {
+
+            for (i = s.length(); i >= 0; i--) {
+                for (j = t.length(); j >= 0; j--) {
+    
+                    if (i == s.length() || j == t.length()) {
+                        dp[i][j] = 0;
+                        continue;
+                    }
+
+                    int ans = 0;
+                    if (s.charAt(i) == t.charAt(j)) {
+                        ans = dp[i + 1][j + 1];
+                    } else {
+                        ans = Math.max(dp[i + 1][j], dp[i][j + 1]);
+                    }
+    
+                    dp[i][j] = ans;
+                }
+            }
+            return dp[0][0];
+        }
+
+        public static int longestCommonSubstring(String s, String t, int i, int j, int[][] dp) {
+            if (i == s.length() || j == t.length())
+                return dp[i][j] = 0;
+    
+            if (dp[i][j] != 0)
+                return dp[i][j];
 }
 
