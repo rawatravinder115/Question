@@ -146,5 +146,10 @@ int[][] dp = new int[a.length + 1][b.length + 1];
     
             if (dp[i][j] != 0)
                 return dp[i][j];
+            
+                int count = 0;
+        if (s.charAt(i) == t.charAt(j)) {
+            count = longestCommonSubstring(s, t, i + 1, j + 1, dp) + 1;
+        }
 }
 
