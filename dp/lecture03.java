@@ -176,5 +176,10 @@ int[][] dp = new int[a.length + 1][b.length + 1];
         }
         return dp[0][0];
     }
+
+    public static int maxUncrossedLines(int[] a, int[] b) {
+
+        int[][] dp = new int[a.length + 1][b.length + 1];
+        int ans = maxUncrossedLines01(a, b, 0, 0, dp);
 }
 
