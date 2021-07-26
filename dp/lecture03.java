@@ -193,5 +193,9 @@ int[][] dp = new int[a.length + 1][b.length + 1];
 
         if (dp[i][j] != 0)
             return dp[i][j];
+            int count = 0;
+        if (a[i] == b[j]) {
+            count = maxUncrossedLines01(a, b, i + 1, j + 1, dp) + 1;
+        } else {
 }
 
