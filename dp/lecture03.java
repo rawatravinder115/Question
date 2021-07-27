@@ -255,6 +255,12 @@ int[][] dp = new int[a.length + 1][b.length + 1];
     public static int coinChangePermutation_DP(int[] arr, int tar, int[] dp) {
         dp[0] = 1;
         int Tar = tar;
+        for (tar = 0; tar <= Tar; tar++) {
+            if (tar == 0) {
+                 dp[tar] = 1;
+                continue;
+            }
+            int count = 0;
 
 }
 
