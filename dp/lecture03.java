@@ -236,5 +236,15 @@ int[][] dp = new int[a.length + 1][b.length + 1];
 
     return Math.max(Math.max(a, b), Math.max(c, val));
     }
+    
+    // coin change/ target type
+    public static int coinChangePermutation(int[] arr, int tar, int[] dp) {
+        if (tar == 0)
+            return dp[tar] = 1;
+            if (dp[tar] != 0)
+            return dp[tar];
+
+        int count = 0;
+
 }
 
