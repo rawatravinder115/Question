@@ -261,6 +261,15 @@ int[][] dp = new int[a.length + 1][b.length + 1];
                 continue;
             }
             int count = 0;
+            for (int ele : arr)
+                if (tar - ele >= 0)
+                    count += dp[tar - ele];
+
+            dp[tar] = count;
+        }
+
+        return dp[Tar];
+    }
 
 }
 
