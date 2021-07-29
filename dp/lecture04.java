@@ -3,4 +3,8 @@ class lecture04{
         // target();
         Knapsack();
     }
+
+    public static void target() {
+        int[] coins = { 2, 3, 5, 7 };
+        int tar = 10;
 }
