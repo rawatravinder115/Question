@@ -14,4 +14,10 @@ class lecture04{
 
         System.out.println(targetSum02_DP(coins, tar));
     }
+
+    public static void Display1d(int[] dp) {
+        for (int i : dp)
+            System.out.print(i + " ");
+            System.out.println();
+    }
 }
