@@ -35,4 +35,8 @@ class lecture04{
         int ans = coinChange_(coins, amount, dp);
         return ans != (int) 1e8 ? ans : -1;
     }
+
+    public static int coinChange_(int[] coins, int tar, int[] dp) {
+        if (tar < 0)
+            return -1;
 }
