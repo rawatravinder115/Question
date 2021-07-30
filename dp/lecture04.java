@@ -32,4 +32,7 @@ class lecture04{
 
     public int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
+        int ans = coinChange_(coins, amount, dp);
+        return ans != (int) 1e8 ? ans : -1;
+    }
 }
