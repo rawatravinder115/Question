@@ -56,4 +56,15 @@ class lecture04{
 
         return dp[tar] = minHeight;
     }
+
+    public static int targetSum(int[] coins, int idx, int tar, int[][] dp) {
+        if (tar == 0 || idx == coins.length) {
+            if (tar == 0)
+                return dp[idx][tar] = 1;
+
+            return dp[idx][tar] = 0;
+        }
+
+        if (dp[idx][tar] != 0)
+            return dp[idx][tar];
 }
