@@ -29,4 +29,7 @@ class lecture04{
             System.out.println();
         }
     }
+
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
 }
