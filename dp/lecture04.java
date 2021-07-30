@@ -67,4 +67,12 @@ class lecture04{
 
         if (dp[idx][tar] != 0)
             return dp[idx][tar];
+            int count = 0;
+        if (tar - coins[idx] >= 0)
+            count += targetSum(coins, idx + 1, tar - coins[idx], dp);
+
+        count += targetSum(coins, idx + 1, tar, dp);
+
+        return dp[idx][tar] = count;
+    }
 }
