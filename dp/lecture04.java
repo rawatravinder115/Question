@@ -39,4 +39,11 @@ class lecture04{
     public static int coinChange_(int[] coins, int tar, int[] dp) {
         if (tar < 0)
             return -1;
+            if (tar == 0)
+            return 0;
+
+        if (dp[tar] != 0)
+            return dp[tar];
+
+        int minHeight = (int) 1e8;
 }
