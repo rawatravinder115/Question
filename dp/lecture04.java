@@ -46,4 +46,14 @@ class lecture04{
             return dp[tar];
 
         int minHeight = (int) 1e8;
+        for (int ele : coins) {
+            if (tar - ele >= 0) {
+                int rMinHeight = coinChange_(coins, tar - ele, dp);
+                if (rMinHeight != 1e8 && rMinHeight + 1 < minHeight)
+                    minHeight = rMinHeight + 1;
+            }
+        }
+
+        return dp[tar] = minHeight;
+    }
 }
