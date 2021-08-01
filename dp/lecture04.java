@@ -88,4 +88,10 @@ class lecture04{
 
         int count = 0;
         if (tar - coins[idx] >= 0)
+        count += targetSum02(coins, idx - 1, tar - coins[idx - 1], dp);
+
+        count += targetSum02(coins, idx - 1, tar, dp);
+
+        return dp[idx][tar] = count;
+    }
 }
