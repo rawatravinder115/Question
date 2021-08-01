@@ -75,4 +75,12 @@ class lecture04{
 
         return dp[idx][tar] = count;
     }
+
+    public static int targetSum02(int[] coins, int idx, int tar, int[][] dp) {
+        if (tar == 0 || idx == 0) {
+            if (tar == 0)
+                return dp[idx][tar] = 1;
+
+            return dp[idx][tar] = 0;
+        }
 }
