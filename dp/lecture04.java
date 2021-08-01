@@ -83,4 +83,9 @@ class lecture04{
 
             return dp[idx][tar] = 0;
         }
+        if (dp[idx][tar] != 0)
+            return dp[idx][tar];
+
+        int count = 0;
+        if (tar - coins[idx] >= 0)
 }
