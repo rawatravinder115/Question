@@ -122,4 +122,11 @@ class lecture04{
         return  printPathTargetSum(coins,coins.length,Tar,"",dp);
     }
 
+    public static int printPathTargetSum(int[] coins,int idx,int tar,String ans,boolean [][]dp){
+
+        if(tar == 0 || idx == 0){
+            if(tar == 0){
+                System.out.println(ans);
+                return 1;
+            }
 }
