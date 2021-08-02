@@ -98,4 +98,12 @@ class lecture04{
 
         boolean[][] dp = new boolean[coins.length + 1][tar + 1];
         int Tar = tar;
+        for (int idx = 0; idx <= coins.length; idx++) {
+            for (tar = 0; tar <= Tar; tar++) {
+                if (tar == 0 || idx == 0) {
+                    if (tar == 0) 
+                        dp[idx][tar] = true;
+
+                        continue;
+                }
 }
