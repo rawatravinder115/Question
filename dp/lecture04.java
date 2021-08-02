@@ -106,4 +106,11 @@ class lecture04{
 
                         continue;
                 }
+                if (tar - coins[idx - 1] >= 0)
+                    dp[idx][tar] = dp[idx - 1][tar - coins[idx - 1]];
+
+                dp[idx][tar] = dp[idx][tar] || dp[idx - 1][tar];
+
+            }
+        }
 }
