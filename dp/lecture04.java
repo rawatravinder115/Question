@@ -119,4 +119,7 @@ class lecture04{
         //     }
         //     System.out.println();
         // }
+        return  printPathTargetSum(coins,coins.length,Tar,"",dp);
+    }
+
 }
