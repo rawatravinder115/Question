@@ -129,4 +129,11 @@ class lecture04{
                 System.out.println(ans);
                 return 1;
             }
+            return 0;
+        }
+
+        int count=0;
+        if(tar - coins[idx - 1] >= 0 && dp[idx-1][tar - coins[idx-1]] )
+            count+=printPathTargetSum(coins, idx-1, tar- coins[idx-1], ans+coins[idx-1]+"  ", dp);
+            
 }
