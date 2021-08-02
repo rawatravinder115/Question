@@ -113,4 +113,10 @@ class lecture04{
 
             }
         }
+        // for (boolean[] ar : dp) {
+        //     for (boolean ele : ar) {
+        //         System.out.print(ele + " ");
+        //     }
+        //     System.out.println();
+        // }
 }
